@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Insertion {
-
+    //插入排序
     public static void sort(Comparable[] a){
         int N = a.length;
         for(int i=1;i<N;i++){

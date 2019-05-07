@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Merge {
-
+    //自顶向下的归并排序
     private static Comparable[] aux;
 
     public static void sort(Comparable[] a){

@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 
 public class Example {
+    //排序模板
     public static void sort(Comparable[] a){}
 
     private static boolean less(Comparable v,Comparable w){

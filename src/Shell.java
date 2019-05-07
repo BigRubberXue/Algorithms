@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Shell {
+    //希尔排序
     public static void sort(Comparable[] a){
         int N = a.length;
         int h = 1;

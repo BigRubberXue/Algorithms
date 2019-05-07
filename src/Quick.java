@@ -1,32 +1,32 @@
 import java.util.Scanner;
 
-public class MergeBU {
-    //自底向上的归并排序
-    private static Comparable[] aux;
-
+public class Quick {
+    //快速排序
     public static void sort(Comparable[] a){
-        int N = a.length;
-        aux = new Comparable[N];
-        for(int sz = 1 ; sz < N ; sz=sz+sz){
-            for(int lo = 0 ; lo < N-sz ; lo += sz+sz){
-                merge(a,lo,lo+sz-1,Math.min(lo+sz+sz-1,N-1));
-            }
-        }
+        sort(a,0,a.length-1);
     }
 
-    public static void merge(Comparable[] a, int lo, int mid, int hi){
-        int i=lo,j=mid+1;
-        for(int k=lo;k<=hi;k++){
-            aux[k]=a[k];
+    private static void sort(Comparable[] a, int lo, int hi) {
+        if(hi<=lo){
+            return ;
         }
-        for(int k=lo;k<=hi;k++){
-            if(i>mid)                           a[k]=aux[j++];
-            else if(j>hi)                       a[k]=aux[i++];
-            else if(less(aux[j],aux[i]))        a[k]=aux[j++];
-            else                                a[k]=aux[i++];
-        }
+        int j=partition(a,lo,hi);
+        sort(a,lo,j-1);
+        sort(a,j+1,hi);
     }
 
+    private static int partition(Comparable[] a, int lo, int hi) {
+        int i=lo,j=hi+1;
+        Comparable v = a[lo];
+        while(true){
+            while(less(a[++i],v)) if(i==hi) break;
+            while(less(v,a[--j])) if(j==lo) break;
+            if(i>=j) break;
+            exch(a,i,j);
+        }
+        exch(a,lo,j);
+        return j;
+    }
 
     private static boolean less(Comparable v,Comparable w){
         return v.compareTo(w)<0;
@@ -60,4 +60,6 @@ public class MergeBU {
         show(a);
 
     }
+
+
 }
