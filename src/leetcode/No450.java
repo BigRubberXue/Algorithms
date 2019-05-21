@@ -1,4 +1,7 @@
 package leetcode;
+
+import javax.swing.tree.TreeNode;
+
 class No450 {
     public TreeNode deleteNode(TreeNode root, int key) {
         if(isLeafNode(root)){
@@ -29,7 +32,7 @@ class No450 {
             res.val=res.left.val;
             res.left=null;
         }else if(isLeafNode(res.right)){
-            //移动right节点到删除节点
+            //锟狡讹拷right锟节点到删锟斤拷锟节碉拷
             res.val=res.right.val;
             res.right=null;
         }else if(isLeafNode(res)){

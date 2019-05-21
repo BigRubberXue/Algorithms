@@ -1,4 +1,7 @@
 package leetcode;
+
+import java.util.Arrays;
+
 class No26 {
     public int removeDuplicates(int[] nums) {
         int count=0;
