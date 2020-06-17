@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 
+//add for test
 public class No646 {
     public int findLongestChain(int[][] pairs) {
         int[] Dp = new int[pairs.length];
@@ -241,6 +242,7 @@ public class No646 {
         for(int q = 1 ; q <Dp.length;q++ ){
             if(MaxNum<Dp[q]){
                 MaxNum=Dp[q];
+
             }
         }
 
